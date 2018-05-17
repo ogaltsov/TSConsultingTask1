@@ -30,6 +30,7 @@ public final class Manager {
             List<String> totalTransferLines = DepartmentManager.transferringBetweenDep(new ArrayList<>(departmentMap.values()));
 
             FileManager.writeFile(totalTransferFileName, totalTransferLines);
+
         } catch (IOException e){
             System.out.println("Ошибка чтения файла");
         }

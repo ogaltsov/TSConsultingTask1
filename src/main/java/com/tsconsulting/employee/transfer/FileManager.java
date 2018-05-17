@@ -10,8 +10,11 @@ public class FileManager {
 
     public static void writeFile(String fileName, List<String> listOfLines) throws IOException{
 
+        File file = new File(Manager.class.getResource("").getPath()+"/"+fileName);
+        file.createNewFile();
+
         BufferedWriter bufWriter = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream(FileManager.class.getResource(fileName).getPath())));
+                    new FileOutputStream(file)));
 
         listOfLines.forEach(line -> {
                         try {
